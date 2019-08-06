@@ -1,0 +1,30 @@
+---
+title: React et le ReactDOM
+date: 2019-08-02
+---
+
+Rendez-vous dans notre fichier index.js, et essayons de comprendre ce qu'il se passe. On trouve:
+```import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+---
+tu peux voir qu'on importe d'abord plusieur éléments:
+on importe la librairie React, c'est le coeur de notre appli, qui va nous permettre d'utiliser tout le potentiel d'un développement par composant.
+on importe aussi la librairie react-dom. 
+
+Avec la ligne de code:
+
+```
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+---
+on utilise la méthode __render()__ dans laquelle il y a deux arguments:
+
+l'élement à traiter: dans ce cas le component 'App'
+l'endroit ou aller le claquer: dans ce cas, la balise html qui contient l'id 'root', et qui se trouve sur notre index.html
+En réalité, avant d'être envoyé sur notre DOM, le component va passer par une étape intermédiaire, et être envoyé vers les DOM Virtuel.
